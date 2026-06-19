@@ -7,7 +7,10 @@ This repo consists of a single Jupyter notebook, which implements a **Quantum Ca
 The Jupyter notebook implements a Qiskit function called $\mathrm{QCalc}$. It inputs a positive integer $d$ and outputs a quantum circuit that implements the operation
 
 $$
-\mathrm{QCalc} \lvert x \rangle_d \lvert y \rangle_d \lvert z \rangle_1 \lvert 0 \rangle_d =
+\text{QCalc} \lvert x \rangle_d \lvert y \rangle_d \lvert z \rangle_1 \lvert 0 \rangle_d = \begin{cases}
+\lvert x \rangle_d \lvert y \rangle_d \lvert z \rangle_1 \lvert x + y \mod 2^d \rangle_d, & z = 0 \\
+\lvert x \rangle_d \lvert y \rangle_d \lvert z \rangle_1 \lvert x \cdot y \mod 2^d \rangle_d, & z = 1 \\
+\end{cases}
 $$
 
 That is, if the control gate $z$ is activated then it returns the product of the inputs $x$ and $y$, else it returns their sum. Note that the circuit $\mathrm{QCalc}$ operates on $3d + 1$ qubits, but as the implementation shows it also contains ancillas.
