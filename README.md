@@ -13,8 +13,8 @@ $$
 \end{cases}
 $$
 
-That is, if the control gate $z$ is activated then it returns the product of the inputs $x$ and $y$, else it returns their sum. Note that the circuit $\mathrm{QCalc}$ operates on $3d + 1$ qubits, but as the implementation shows it also contains ancillas.
+That is, if the control gate $z$ is activated then it returns the product of the inputs $x$ and $y$, else it returns their sum. Note that the circuit $\mathrm{QCalc}$ operates on $3d + 1$ qubits.
 
-## Analysis
+## Current Status
 
-The second half of the Jupyter notebook shows the Qiskit code operating for small values of $d$. It also provides an analysis of the asymptotic complexity of the circuit as $d \to \infty$.
+Currently, the notebook implements the addition and multiplication circuits separately. More work is required to combine them into the single $\mathrm{QCalc}$ circuit with behavior controlled by the $z$ bit. See the notebook for further details.
